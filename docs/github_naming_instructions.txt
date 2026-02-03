@@ -1,0 +1,151 @@
+GUÍA: Convención para nombrar commits en GitHub
+
+Objetivo
+
+Definir una convención uniforme para nombrar commits, de forma que el historial sea legible, auditable y fácil de revertir.
+
+Formato recomendado
+
+Se recomienda usar el formato:
+
+tipo(alcance): resumen
+
+Donde:
+
+- tipo: categoría del cambio
+- alcance: módulo o parte del proyecto afectada (opcional)
+- resumen: descripción breve del cambio, en una sola línea
+
+Tipos permitidos y uso
+
+feat
+Se usa para introducir una nueva funcionalidad.
+
+fix
+Se usa para corregir un error (bug).
+
+refactor
+Se usa para cambios internos que no alteran el comportamiento observable, pero mejoran estructura, legibilidad o mantenibilidad.
+
+docs
+Se usa para cambios en documentación.
+
+test
+Se usa para agregar o modificar pruebas.
+
+chore
+Se usa para tareas de mantenimiento y cambios no funcionales, por ejemplo dependencias, scripts, ajustes de configuración, build, CI, etc.
+
+perf
+Se usa para mejoras de rendimiento.
+
+style
+Se usa para formateo y estilo de código sin cambios en lógica (por ejemplo, lint, espacios, orden de imports).
+
+Reglas para el resumen
+
+1) El resumen debe escribirse en modo imperativo.
+
+Ejemplos:
+
+- add validation for date field
+- prevent token refresh loop
+- extract sidebar state into hook
+
+2) El resumen debe ser corto y directo.
+
+Recomendación: 50 a 72 caracteres como referencia para evitar cortes en interfaces y herramientas.
+
+3) Evitar mensajes genéricos.
+
+No se deben usar mensajes como:
+
+- update
+- changes
+- fix stuff
+- final
+- now it works
+
+4) No incluir detalles extensos en el título.
+
+Si se requiere contexto adicional, se agrega en el cuerpo del commit.
+
+Reglas para el alcance
+
+1) El alcance es opcional, pero recomendable si el repositorio tiene módulos claros.
+
+Ejemplos de alcances:
+
+- auth
+- api
+- ui
+- map
+- build
+- data
+
+2) El alcance debe ser corto y consistente.
+
+Se recomienda usar minúsculas y evitar espacios.
+
+Buenas prácticas de estilo
+
+1) Usar minúsculas en tipo y alcance.
+
+2) Mantener un único formato para todo el repositorio.
+No se debe alternar entre estilos distintos.
+
+3) Evitar signos raros y exceso de puntuación.
+El formato debe mantenerse simple.
+
+Cuerpo del commit (cuando sea necesario)
+
+El cuerpo se usa para explicar el motivo del cambio o decisiones relevantes, especialmente cuando:
+
+- se corrige un bug con causa no obvia
+- se introduce una restricción o workaround
+- se cambia un comportamiento por compatibilidad
+
+El cuerpo debe describir el porqué, no repetir el qué.
+
+Referencias a issues o tickets
+
+Cuando exista un issue o ticket asociado, se recomienda referenciarlo.
+
+Ejemplos:
+
+- Refs: #123
+- Closes #123
+
+Ejemplos completos
+
+feat(map): add route filter by corridor
+
+fix(api): handle 204 responses without parsing
+
+refactor(ui): extract sidebar state into hook
+
+docs(readme): document local setup steps
+
+chore(deps): bump leaflet to 1.9.4
+
+perf(query): reduce duplicated scans in matching logic
+
+Mensajes incorrectos (evitar)
+
+update files
+
+fix
+
+final final
+
+changes for bug
+
+Commit mínimo recomendado
+
+Un commit bien nombrado debe permitir entender:
+
+- qué tipo de cambio se hizo (tipo)
+- dónde impacta (alcance)
+- qué se hizo en una frase corta (resumen)
+
+Fin de la guía
